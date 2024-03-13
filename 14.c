@@ -95,9 +95,9 @@ int main()
     {
         printf("\n-----------------MENU--------------------");
         printf("\n 1 - Insert node in BST");
-        printf("\n 7 - Count Number of Leaf Nodes");
-        printf("\n 12 - Print all Root to Leaf Paths");
-        printf("\n 13 - Exit\n");
+        printf("\n 2 - Count Number of Leaf Nodes");
+        printf("\n 3 - Print all Root to Leaf Paths");
+        printf("\n 4 - Exit\n");
         printf("------------------------------------------\n");
         printf("\n Enter choice : ");
         scanf("%d", &ch);
@@ -124,6 +124,12 @@ int main()
             int pathlen = 0;
             printPath(root, path, pathlen);
             break;
+        case 4:
+            exit(1);
+            break;
+        default:
+            printf("Error! Invalid Input\n");
         }
     }
+    return 0;
 }
