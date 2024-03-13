@@ -52,11 +52,25 @@ int main()
         }
         else if (ch == ')')
         {
-            while(stack[top]!='(')
+            while (stack[top] != '(')
             {
-                postfix[k++]=pop();
+                postfix[k++] = pop();
             }
             pop();
         }
+        else
+        {
+            while (pr(stack[top]) >= pr(ch))
+            {
+                postfix[k++] = pop();
+            }
+            push(ch);
+        }
     }
+    while (stack[top] != '(')
+    {
+        postfix[k++] = pop();
+    }
+    postfix[k] = '\0';
+    printf("Postfix Expression: %s", postfix);
 }
