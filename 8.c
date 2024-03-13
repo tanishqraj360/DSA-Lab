@@ -61,19 +61,11 @@ void deleteatkey()
     }
     if (temp->data == key)
     {
-        if (temp->next == NULL)
-        {
-            printf("Data to be deleted: %d\n", temp->data);
-            temp->prev->next = NULL;
-            free(temp);
-        }
-        else
-        {
-            printf("Data to be deleted: %d\n", temp->data);
-            temp->prev->next = temp->next;
+        printf("Value to be deleted: %d\n", temp->data);
+        temp->prev->next = temp->next;
+        if (temp->next != NULL)
             temp->next->prev = temp->prev;
-            free(temp);
-        }
+        free(temp);
     }
     else
     {
