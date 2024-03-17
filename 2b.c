@@ -7,9 +7,9 @@ void findMax(int *arr, int n, int m)
         int max = 0;
         for (int j = 0; j < m; j++)
         {
-            if (max <= *arr + i * n + j)
+            if (max <= *(arr + i * n + j))
             {
-                max = *arr + i * n + j;
+                max = *(arr + i * n + j);
             }
         }
         printf("Max element in row %d is %d\n", i + 1, max);
